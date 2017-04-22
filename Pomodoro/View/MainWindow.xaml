@@ -1,0 +1,24 @@
+﻿<Window x:Class="Pomodoro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pomodoro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="807.835">
+
+    <Grid Background="#FF7C7C7C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="#FFA02525">
+            <TextBlock Text="POMODORO" TextAlignment="Center" FontSize="75" FontFamily="Harrington" FontWeight="Bold" Foreground="#FF2C2424"/>
+        </DockPanel>
+
+        <Frame x:Name="MainAppFrame" HorizontalAlignment="Left" Height="455" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="780"/>
+
+
+    </Grid>
+</Window>

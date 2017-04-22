@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using Pomodoro.Model.Database;
 
-namespace Pomodoro {
+namespace Pomodoro.View.Pages {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for LoginPage.xaml
 	/// </summary>
-	public partial class MainWindow : Window {
-		public MainWindow () {
+	public partial class LoginPage : Page {
+		public LoginPage () {
 			InitializeComponent();
+		}
+
+		private void LoginButton_Click ( object sender, RoutedEventArgs e ) {
+			DatabaseConnector.Connect();
+		}
+
+		private void CreateAccountButton_Click ( object sender, RoutedEventArgs e ) {
+
 		}
 	}
 }
