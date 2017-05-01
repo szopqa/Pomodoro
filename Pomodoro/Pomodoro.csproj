@@ -59,7 +59,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Database\DatabaseConnector.cs" />
+    <Compile Include="Model\Database\IExecutable.cs" />
+    <Compile Include="Model\Database\NewUserCreator.cs" />
+    <Compile Include="Model\Database\UserAuthorizer.cs" />
+    <Compile Include="Model\Database\UsernameChecker.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\CreateNewAccountPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="View\Pages\CreateNewAccountPage.xaml.cs">
+      <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -75,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Pages\CreateNewAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

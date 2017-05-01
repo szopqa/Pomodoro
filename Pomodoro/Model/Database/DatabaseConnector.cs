@@ -12,13 +12,13 @@ namespace Pomodoro.Model.Database {
 			string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
 										C:\Databases\PomodoroDatabase.mdf;
 										Integrated Security=True;Connect Timeout=30";
-
+			 
 			
 			using (SqlConnection conn = new SqlConnection(ConnectionString)) {
 				
 				conn.Open();
 
-				SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE user_id = @0", conn);
+				SqlCommand command = new SqlCommand("SELECT * FROM User WHERE user_id = @0", conn);
 				//command.Parameters.Add("0", 1);
 				command.Parameters.AddWithValue("0", 1);
 
@@ -42,7 +42,7 @@ namespace Pomodoro.Model.Database {
 				/*
 				System.Console.WriteLine("\nInsert into command");
 
-				SqlCommand insertCommand = new SqlCommand("INSERT INTO Users(username,password) VALUES (@0,@1)", conn);
+				SqlCommand insertCommand = new SqlCommand("INSERT INTO User(username,password) VALUES (@0,@1)", conn);
 				insertCommand.Parameters.Add(new SqlParameter("0", "administrator"));
 				insertCommand.Parameters.Add(new SqlParameter("1", "administrator"));
 

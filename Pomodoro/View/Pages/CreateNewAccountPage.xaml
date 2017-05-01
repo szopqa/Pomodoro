@@ -1,0 +1,31 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pomodoro.View.Pages"
+      xmlns:ViewModel="clr-namespace:Pomodoro.ViewModel" x:Class="Pomodoro.View.Pages.CreateNewAccountPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="455" d:DesignWidth="780"
+      Title="CreateNewAccountPage" ShowsNavigationUI="False">
+
+    <Page.DataContext>
+        <ViewModel:CreateNewAccountPageViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <Label x:Name="InsLoginLbl" Content="Insert Username" HorizontalAlignment="Left" Height="59" Margin="75,28,0,0" VerticalAlignment="Top" Width="215" FontSize="20"/>
+        <TextBox x:Name="NewUsernameTextBox" x:FieldModifier="public" HorizontalAlignment="Left" Height="59" Margin="339,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" FontSize="20"/>
+        <Label x:Name="InsPassLbl" Content="Insert Password" HorizontalAlignment="Left" Height="59" Margin="75,132,0,0" VerticalAlignment="Top" Width="215" FontSize="20"/>
+        <PasswordBox x:Name="PasswordTextBox" x:FieldModifier="public" HorizontalAlignment="Left" Height="59" Margin="339,148,0,0" VerticalAlignment="Top" Width="233" FontSize="20"/>
+        <Label x:Name="ReinsPassLbl" Content="Repeat Password" HorizontalAlignment="Left" Height="59" Margin="75,243,0,0" VerticalAlignment="Top" Width="215" FontSize="20"/>
+        <PasswordBox x:Name="RePasswordTextBox" x:FieldModifier="public" HorizontalAlignment="Left" Height="59" Margin="339,243,0,0" VerticalAlignment="Top" Width="233" FontSize="20"/>
+        <Label x:Name="InsMailLbl" Content="Insert Email Address" HorizontalAlignment="Left" Height="59" Margin="75,347,0,0" VerticalAlignment="Top" Width="215" FontSize="20"/>
+        <TextBox x:Name="NewEmailTextBox" x:FieldModifier="public" HorizontalAlignment="Left" Height="59" Margin="339,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" FontSize="20"/>
+
+        <Button x:Name="CreateBtn" Content="Accept" HorizontalAlignment="Left" Margin="657,255,0,0" VerticalAlignment="Top" Width="98" Height="47" Click="CreateBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="657,357,0,0" VerticalAlignment="Top" Width="98" Height="49" Click="BackBtn_Click"/>
+
+
+    </Grid>
+</Page>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="807.835">
+        Title="Pomodoro" Height="600" Width="807.835" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid Background="#FF7C7C7C">
         <Grid.RowDefinitions>
@@ -14,10 +14,10 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Background="#FFA02525">
-            <TextBlock Text="POMODORO" TextAlignment="Center" FontSize="75" FontFamily="Harrington" FontWeight="Bold" Foreground="#FF2C2424"/>
+            <TextBlock Text="TITLE HERE" TextAlignment="Center" FontSize="75" FontFamily="Harrington" FontWeight="Bold" Foreground="#FF2C2424"/>
         </DockPanel>
 
-        <Frame x:Name="MainAppFrame" HorizontalAlignment="Left" Height="455" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="780"/>
+        <Frame x:Name="MainAppFrame" x:FieldModifier="public" HorizontalAlignment="Left" Height="455" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="780" NavigationUIVisibility="Hidden"/>
 
 
     </Grid>

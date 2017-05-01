@@ -1,36 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SqlClient;
-using Pomodoro.Model.Database;
+using Pomodoro.Model;
+using Pomodoro.ViewModel;
 
 namespace Pomodoro.View.Pages {
 	/// <summary>
-	/// Interaction logic for LoginPage.xaml
+	/// ButtonClicks sends data from textboxes to ViewModel class
 	/// </summary>
 	public partial class LoginPage : Page {
+
+		private LoginPageViewModel viewModel;
+
 		public LoginPage () {
 			InitializeComponent();
+			viewModel = new LoginPageViewModel();
 		}
 
+		/// <summary>
+		/// Sends login and password to ViewModel Class
+		/// </summary>
 		private void LoginButton_Click ( object sender, RoutedEventArgs e ) {
-			DatabaseConnector.Connect();
+
+			//Checking weather user typed anything into boxes
+			if (viewModel.AreAllTextBoxesFilled(LoginTextBox.Text, PasswordTextBox.Password)) {
+				viewModel.NewUser = new User(LoginTextBox.Text, PasswordTextBox.Password, "");
+				ClearTexboxes();
+			}
+			else {
+				MessageBox.Show("Boxes are not filled!");
+			}
+			
 		}
 
+		/// <summary>
+		/// Loads CreateNewAccount Page
+		/// </summary>
 		private void CreateAccountButton_Click ( object sender, RoutedEventArgs e ) {
 
+			this.NavigationService.Navigate(new CreateNewAccountPage());
+
 		}
+
+
+		/// <summary>
+		/// Removes data in textboxes
+		/// </summary>
+		private void ClearTexboxes() {
+			LoginTextBox.Clear();
+			PasswordTextBox.Clear();
+		}
+
 	}
 }
