@@ -58,7 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Database\DatabaseConnector.cs" />
     <Compile Include="Model\Database\IExecutable.cs" />
     <Compile Include="Model\Database\NewUserCreator.cs" />
     <Compile Include="Model\Database\UserAuthorizer.cs" />
