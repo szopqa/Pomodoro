@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using Pomodoro.Model;
 using Pomodoro.Model.Database;
+using Pomodoro.View.Pages.MainApplicationPages;
 
 namespace Pomodoro.ViewModel {
 	public class LoginPageViewModel {
@@ -37,10 +38,24 @@ namespace Pomodoro.ViewModel {
 				ShowLoginFailed();
 			}
 			else {
-				MessageBox.Show($"Logged as {loggedUser.Username}");
-			}
+				loggedUser.IsLoggedIn = true;
+				MessageBox.Show($"Logged as {NewUser.Username}");
 
-			//TODO: Pass Logged user to next application pages
+				LoadApplicationStartPage(loggedUser);				
+			}
+		}
+
+
+
+		/// <summary>
+		/// Loads ApplicationStartPage after logging in
+		/// </summary>
+		private void LoadApplicationStartPage ( User loggedUser ) {
+			var mainWindow = Application.Current.MainWindow as MainWindow;
+			mainWindow.MainAppFrame.NavigationService.Navigate(new ApplicationStartPage( loggedUser ));
+
+
+			//TODO : Passint loggedUser to ApplicationStartPageViewModel
 		}
 
 
@@ -68,6 +83,7 @@ namespace Pomodoro.ViewModel {
 		private void ShowLoginFailed () {
 			MessageBox.Show($"Login failed! Username \"{NewUser.Username}\" and password do not match!");
 		}
+
 
 
 	}

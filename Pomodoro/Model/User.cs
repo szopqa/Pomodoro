@@ -12,6 +12,12 @@ namespace Pomodoro.Model {
 
 	#region Properties with getters and setters
 
+		private int _userID;
+		public int UserId {
+			get { return _userID; }
+			set { _userID = value; }
+		}
+
 		private string _username;
 		public string Username {
 			get { return _username; }
@@ -30,6 +36,12 @@ namespace Pomodoro.Model {
 			set { _emailAddress = value; }
 		}
 
+		private bool _isLoggedIn;
+		public bool IsLoggedIn {
+			get { return _isLoggedIn; }
+			set { _isLoggedIn = value; }
+		}
+
 	#endregion
 
 		//Constructors
@@ -39,6 +51,7 @@ namespace Pomodoro.Model {
 			this._username = username;
 			this._password = password;
 			this._emailAddress = emailAddress;
+			this._isLoggedIn = false;
 		}
 
 	}

@@ -23,6 +23,10 @@ namespace Pomodoro.Model.Database{
 
 			int resultsFound = 0;
 
+			int _userID = 0;
+			string _userEmail = "";
+
+
 			using ( var connection = new SqlConnection(ConnectionString) ) {
 				connection.Open();
 
@@ -38,11 +42,16 @@ namespace Pomodoro.Model.Database{
 						//Reading results
 						while ( reader.Read()) {
 							resultsFound++;
+							_userID = (int)reader[0];
+							_userEmail = reader[3].ToString();
 						}
 
 						//User found in database
 						if (resultsFound > 0) {
-							User loggedUser = new User() {Username = username, Password = password};
+							User loggedUser = new User() {UserId = _userID,
+														  Username = username,
+														  Password = password,
+														  EmailAddress = _userEmail};
 							return loggedUser;
 						}
 						else {
