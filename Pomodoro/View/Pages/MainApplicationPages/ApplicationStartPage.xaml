@@ -73,7 +73,7 @@
 
         </DockPanel>
 
-        <Frame x:Name="StartPageFrame"  x:FieldModifier="public" HorizontalAlignment="Left" Height="435" Margin="283,10,0,0" VerticalAlignment="Top" Width="487"/>
+        <Frame x:Name="PomodoroMainFrame"  x:FieldModifier="public" HorizontalAlignment="Left" Height="435" Margin="283,10,0,0" VerticalAlignment="Top" Width="487"/>
 
     </Grid>
 </Page>

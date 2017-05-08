@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 
 namespace Pomodoro.Model.Database {
 	public class NewUserCreator : IExecutable {
-
-		private string _connectionString;
-
-		public string ConnectionString {
-			get { return this._connectionString; }
-		}
+		public string ConnectionString { get; }
 
 		public NewUserCreator() {
 			//setting connection string
-			this._connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
+			this.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
 										C:\Databases\PomodoroDatabase.mdf;
 										Integrated Security=True;Connect Timeout=30";
 		}
@@ -40,7 +35,6 @@ namespace Pomodoro.Model.Database {
 					return new User(username, password, email);
 				}
 				catch (SqlException ex) {
-					Console.WriteLine("EXXXXXX");
 					return null;
 				}
 

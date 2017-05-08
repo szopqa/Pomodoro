@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace Pomodoro.Model.Database {
 	public class UsernameChecker : IExecutable {
-
-		private string _connectionString;
-
-		public string ConnectionString => _connectionString;
+		public string ConnectionString { get; }
 
 		public UsernameChecker () {
 			//setting connection string 
-			this._connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
+			this.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
 											C:\Databases\PomodoroDatabase.mdf;
 											Integrated Security=True;Connect Timeout=30";
 		}

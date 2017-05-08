@@ -41,17 +41,17 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 
 		private void MenuButtonClick ( object sender, RoutedEventArgs e ) {
 
-			Storyboard showMenu = this.FindResource("showDockPanel") as Storyboard;
-			Storyboard hideMenu = this.FindResource("showDockPanel") as Storyboard;
+			Storyboard showMenuAnimation = this.FindResource("showDockPanel") as Storyboard;
+			Storyboard hideMenuAnimation = this.FindResource("showDockPanel") as Storyboard;
 
 			if ( ! isSliderMenuVisible ) {
-				showMenu = this.FindResource("showDockPanel") as Storyboard;
-				showMenu.Begin();
+				showMenuAnimation = this.FindResource("showDockPanel") as Storyboard;
+				showMenuAnimation.Begin();
 				isSliderMenuVisible = true;
 			}
 			else {
-				hideMenu = this.FindResource("hideDockPanel") as Storyboard;
-				hideMenu.Begin();
+				hideMenuAnimation = this.FindResource("hideDockPanel") as Storyboard;
+				hideMenuAnimation.Begin();
 				isSliderMenuVisible = false;
 			}
 
