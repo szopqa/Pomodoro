@@ -12,10 +12,10 @@
         <ViewModel:LoginPageViewModel/>
     </Page.DataContext>
     <Grid Background="#FF7C7C7C">
-        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Height="61" Margin="208,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374" Background="#FFC13A3A" FontSize="40"/>
-        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="61" Margin="208,183,0,0" VerticalAlignment="Top" Width="374" Background="#FFC13A3A" FontSize="40"/>
-        <Button x:Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Height="77" Margin="286,316,0,0" VerticalAlignment="Top" Width="213" Background="#FF9B2323" FontSize="40" Click="LoginButton_Click"/>
-        <Button x:Name="CreateAccountButton" Content="Create new account" HorizontalAlignment="Left" Height="56" Margin="614,389,0,0" VerticalAlignment="Top" Width="156" Background="#FF9B2323" FontSize="15" Click="CreateAccountButton_Click"/>
+        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Height="61" Margin="208,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374" Background="#FFC13A3A" FontSize="40" FontFamily="Consolas"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="61" Margin="208,183,0,0" VerticalAlignment="Top" Width="374" Background="#FFC13A3A" FontSize="40" FontFamily="Consolas"/>
+        <Button x:Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Height="77" Margin="286,316,0,0" VerticalAlignment="Top" Width="213" Background="#FF9B2323" FontSize="48" Click="LoginButton_Click" FontFamily="Poor Richard" FontWeight="Bold"/>
+        <Button x:Name="CreateAccountButton" Content="Create new account" HorizontalAlignment="Left" Height="56" Margin="596,389,0,0" VerticalAlignment="Top" Width="174" Background="#FF9B2323" FontSize="20" Click="CreateAccountButton_Click" FontFamily="Poor Richard" FontWeight="Bold"/>
     </Grid>
 
 </Page>

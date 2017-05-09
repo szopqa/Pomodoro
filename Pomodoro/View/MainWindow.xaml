@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Background="#FFA02525">
-            <TextBlock Text="TITLE HERE" TextAlignment="Center" FontSize="75" FontFamily="Harrington" FontWeight="Bold" Foreground="#FF2C2424"/>
+            <TextBlock Text="P o m o d o r o" TextAlignment="Center" FontSize="80" FontFamily="Poor Richard" Foreground="#FF2C2424"/>
         </DockPanel>
 
         <Frame x:Name="MainAppFrame" x:FieldModifier="public" HorizontalAlignment="Left" Height="455" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="780" NavigationUIVisibility="Hidden"/>
