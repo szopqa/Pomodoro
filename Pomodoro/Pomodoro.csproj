@@ -63,17 +63,25 @@
     <Compile Include="Model\Database\UserAuthorizer.cs" />
     <Compile Include="Model\Database\UsernameChecker.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="ViewModel\ApplicationStartPageViewModel.cs" />
-    <Compile Include="ViewModel\CreateNewAccountPageViewModel.cs" />
-    <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\MainApplicationPagesViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\LoginPagesViewModel\CreateNewAccountPageViewModel.cs" />
+    <Compile Include="ViewModel\LoginPagesViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\MainApplicationPagesViewModel\PomodoroTimerPageViewModel.cs" />
+    <Compile Include="ViewModel\MainApplicationPagesViewModel\UserInfoPageViewModel.cs" />
     <Compile Include="View\Pages\LoginPages\CreateNewAccountPage.xaml.cs">
       <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\LoginPages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\MainApplicationPages\ApplicationStartPage.xaml.cs">
-      <DependentUpon>ApplicationStartPage.xaml</DependentUpon>
+    <Compile Include="View\Pages\MainApplicationPages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MainApplicationPages\PomodoroTimerPage.xaml.cs">
+      <DependentUpon>PomodoroTimerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MainApplicationPages\UserInfoPage.xaml.cs">
+      <DependentUpon>UserInfoPage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,7 +103,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\MainApplicationPages\ApplicationStartPage.xaml">
+    <Page Include="View\Pages\MainApplicationPages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MainApplicationPages\PomodoroTimerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MainApplicationPages\UserInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

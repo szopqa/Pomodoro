@@ -48,14 +48,14 @@ namespace Pomodoro.ViewModel {
 
 
 		/// <summary>
-		/// Loads ApplicationStartPage after logging in
+		/// Loads MainPage after logging in
 		/// </summary>
 		private void LoadApplicationStartPage ( User loggedUser ) {
 			var mainWindow = Application.Current.MainWindow as MainWindow;
-			mainWindow.MainAppFrame.NavigationService.Navigate(new ApplicationStartPage( loggedUser ));
+			mainWindow.MainAppFrame.NavigationService.Navigate(new MainPage( loggedUser ));
 
 
-			//TODO : Passint loggedUser to ApplicationStartPageViewModel
+			//TODO : Passint loggedUser to MainPageViewModel
 		}
 
 
