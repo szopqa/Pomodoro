@@ -1,4 +1,4 @@
-﻿<Page x:Class="Pomodoro.View.Pages.MainApplicationPages.ApplicationStartPage"
+﻿<Page x:Class="Pomodoro.View.Pages.MainApplicationPages.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,8 @@
       xmlns:viewModel="clr-namespace:Pomodoro.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="455" d:DesignWidth="780"
-      Title="ApplicationStartPage">
+      Title="MainPage"
+      Loaded="MainPage_OnLoaded">
 
     <Page.Resources>
 
@@ -43,19 +44,11 @@
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard x:Name="hideDockPanel_BeginStoryboard" Storyboard="{StaticResource hideDockPanel}"/>
             <BeginStoryboard Storyboard="{StaticResource showDockPanel}"/>
-        </EventTrigger>    
+        </EventTrigger>
     </Page.Triggers>
 
-    <!-- Data context -->
-    <Page.DataContext>
-        <viewModel:ApplicationStartPageViewModel/>
-    </Page.DataContext>
 
-    <!-- Logged user info -->
     <Grid Name="MainGrid">
-        <Grid HorizontalAlignment="Left" Height="89" Margin="550,10,0,0" VerticalAlignment="Top" Width="220" d:IsHidden="True">
-            <Label x:Name="UsernameLbl" HorizontalAlignment="Left" Height="69" Margin="10,10,0,0" VerticalAlignment="Top" Width="190"/>
-        </Grid>
 
         <!-- Sliding menu -->
         <DockPanel x:Name="slidingMenuPanel" HorizontalAlignment="Left" Height="445" LastChildFill="False" VerticalAlignment="Top" Width="273" Background="#FF454B51" RenderTransformOrigin="0.5,0.5">
@@ -68,12 +61,14 @@
                 </TransformGroup>
             </DockPanel.RenderTransform>
             <StackPanel Height="445" VerticalAlignment="Top" Width="272">
-                <Button Name="MoveMenuBtn" Click="MenuButtonClick" Height="46"></Button>
+                <Button Name="MoveMenuBtn" Click="MenuButtonClick"  Content ="Hide" Height="46"></Button>
+                <Button Name="StartPageBtn" Content ="Start Page" Click="StartPageBtn_OnClick" Height="46"></Button>
+                <Button Name="PomodoroTimerBtn" Content ="Pomodoro timer" Click="PomodoroTimerBtn_OnClick " Height="46"></Button>
             </StackPanel>
 
         </DockPanel>
 
-        <Frame x:Name="PomodoroMainFrame"  x:FieldModifier="public" HorizontalAlignment="Left" Height="435" Margin="283,10,0,0" VerticalAlignment="Top" Width="487"/>
+        <Frame x:Name="ApplicationMainFrame"  x:FieldModifier="public" HorizontalAlignment="Left" Height="445" Margin="283,0,0,0" VerticalAlignment="Top" Width="490"/>
 
     </Grid>
 </Page>
