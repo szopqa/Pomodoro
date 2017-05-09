@@ -7,7 +7,9 @@ using System.Windows.Controls;
 using Pomodoro.Model;
 
 namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
-	class UserInfoPageViewModel {
+	public class UserInfoPageViewModel {
+
+	#region Properties
 
 		private User _loggedUser;
 		public User LoggedUser {
@@ -21,9 +23,18 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 			get { return _userInfoPage; }
 		}
 
+	#endregion
+
 		public UserInfoPageViewModel(User loggedUser, Page userInfoPage) {
 			LoggedUser = loggedUser;
 			UserInfoPage = userInfoPage;
+		}
+
+		public void ShowUsername() {
+
+			var usernameLabel = UserInfoPage.FindName("UsernameLbl") as Label;
+			usernameLabel.Content = "Logged as: " + LoggedUser.Username;
+
 		}
 
 

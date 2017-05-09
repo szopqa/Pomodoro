@@ -8,7 +8,7 @@ using Pomodoro.ViewModel.MainApplicationPagesViewModel;
 namespace Pomodoro.View.Pages.MainApplicationPages {
 	
 	/// <summary>
-	/// Application's main page. Holds logged user info, passing it to another pages
+	/// Application's main page. Holds logged user info, passing it to pages viewmodels
 	/// </summary>	
 	public partial class MainPage : Page {
 
@@ -18,10 +18,8 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 		private UserInfoPage userInfoPage = new UserInfoPage();
 		private PomodoroTimerPage pomodoroTimerPage = new PomodoroTimerPage();
 		
-		/*View Model pages*/
+		/*Page ViewModel class*/
 		private MainPageViewModel _mainViewModel;
-		private UserInfoPageViewModel _userInfoViewModel;
-		private PomodoroTimerPageViewModel _timerViewModel;
 		
 		private bool isSliderMenuVisible;
 
@@ -33,8 +31,8 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 
 			//Passing loggedUser and pages to their viewmodels
 			_mainViewModel = new MainPageViewModel(loggedUser,this);
-			_userInfoViewModel = new UserInfoPageViewModel(loggedUser, userInfoPage);
-			_timerViewModel = new PomodoroTimerPageViewModel(loggedUser, pomodoroTimerPage);
+			userInfoPage.ViewModel = new UserInfoPageViewModel(loggedUser, userInfoPage);
+			pomodoroTimerPage.ViewModel = new PomodoroTimerPageViewModel(loggedUser, pomodoroTimerPage);
 
 			//Setting private properties
 			this.isSliderMenuVisible = true;

@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using Pomodoro.Model;
 
 namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
-	class PomodoroTimerPageViewModel {
+	public class PomodoroTimerPageViewModel {
 
 		private User _loggedUser;
 		public User LoggedUser {

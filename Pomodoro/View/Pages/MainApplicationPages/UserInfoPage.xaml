@@ -7,11 +7,12 @@
       xmlns:MainApplicationPagesViewModel="clr-namespace:Pomodoro.ViewModel.MainApplicationPagesViewModel" x:Class="Pomodoro.View.Pages.MainApplicationPages.UserInfoPage"
       mc:Ignorable="d" 
       d:DesignHeight="435" d:DesignWidth="490"
-      Title="PomodoroTimerPage">
+      Title="PomodoroTimerPage"
+      Loaded="UserInfoPage_OnLoaded">
     
     <Grid x:Name="MainGrid" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
 
-        <Label x:Name="UsernameLbl" HorizontalAlignment="Left" Height="60" Margin="342,10,0,0" VerticalAlignment="Top" Width="138"/>
+        <Label x:Name="UsernameLbl" HorizontalAlignment="Left" Height="37" Margin="342,10,0,0" VerticalAlignment="Top" Width="138" FontSize="18"/>
 
     </Grid>
 </Page>
