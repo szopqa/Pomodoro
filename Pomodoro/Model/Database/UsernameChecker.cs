@@ -11,9 +11,9 @@ namespace Pomodoro.Model.Database {
 
 		public UsernameChecker () {
 			//setting connection string 
-			this.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
-											C:\Databases\PomodoroDatabase.mdf;
-											Integrated Security=True;Connect Timeout=30";
+			this.ConnectionString = @"Data Source=pomidor.database.windows.net;
+									Initial Catalog=Pomodoro;Persist Security Info=True;
+									User ID=szopqa96;Password=Pomodoro.app";
 		}
 
 		/// <summary>
