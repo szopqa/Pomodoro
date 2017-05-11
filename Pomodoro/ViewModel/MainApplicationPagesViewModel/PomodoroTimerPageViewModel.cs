@@ -34,7 +34,7 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 
 
 		public void ActivateTimer() {
-			Timer timer = new Timer( this );
+			Timer timer = new Timer( Seconds_Tick );
 			timer.StartTimer();
 			
 		}

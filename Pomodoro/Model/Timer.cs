@@ -11,28 +11,18 @@ namespace Pomodoro.Model {
 
 		private DispatcherTimer _timer;	
 
-		private PomodoroTimerPageViewModel _viewModel;
-		public PomodoroTimerPageViewModel ViewModel {
-			get { return _viewModel; }
-		}
-
-
-		//Constructor
-		public Timer( PomodoroTimerPageViewModel viewModel ) {
-			_viewModel = viewModel;
-			SetupTimer();
-		}
-
-
 		/// <summary>
-		/// Sets timer interval
+		/// Constructor
 		/// </summary>
-		private void SetupTimer () {
+		/// <param name="functionToInvoke">Function invoked every interval</param>
+		public Timer( Action<object,EventArgs> functionToInvoke ) {
+
 			_timer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 1) };
-			_timer.Tick += new EventHandler(ViewModel.Seconds_Tick);
+			_timer.Tick += new EventHandler(functionToInvoke);
+
 		}
 
-
+		
 		/// <summary>
 		/// Starts timer with set interval
 		/// </summary>
