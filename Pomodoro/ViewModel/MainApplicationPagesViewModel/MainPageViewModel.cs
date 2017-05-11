@@ -61,7 +61,6 @@ namespace Pomodoro.ViewModel {
 				hideMenuAnimation.Begin();
 				startPageButton.Visibility = Visibility.Hidden;
 				timerPageButton.Visibility = Visibility.Hidden;
-				moveMenuButton.Content = "Show";
 				IsMenuVisible = false;
 			}
 			else {
@@ -69,7 +68,6 @@ namespace Pomodoro.ViewModel {
 				showMenuAnimation.Begin();
 				startPageButton.Visibility = Visibility.Visible;
 				timerPageButton.Visibility = Visibility.Visible;
-				moveMenuButton.Content = "Hide";
 				IsMenuVisible = true;
 			}
 

@@ -16,11 +16,11 @@
         <Storyboard x:Key="hideDockPanel">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="slidingMenuPanel">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.513"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.07"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.18"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="slidingMenuPanel">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-66.5"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-112"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ApplicationMainFrame">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-71.718"/>
@@ -30,17 +30,52 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.176"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="MoveMenuBtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.791"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="2.28"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="2.496"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2.815"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="3.165"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="3.676"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="4.388"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="MoveMenuBtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="6.501"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-39.69"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-46.37"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-56.269"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-67.112"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-82.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-105.019"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.024"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="179.843"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.403"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1.409"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.378"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.422"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.001"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
         <!--Show menu animation -->
         <Storyboard x:Key="showDockPanel">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="slidingMenuPanel">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0.077"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.18"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.506"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1.004"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="slidingMenuPanel">
-                <EasingDoubleKeyFrame KeyTime="0" Value="-126"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="-112"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-67.5"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.5"/>
             </DoubleAnimationUsingKeyFrames>
@@ -51,6 +86,52 @@
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ApplicationMainFrame">
                 <EasingDoubleKeyFrame KeyTime="0" Value="1.176"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="MoveMenuBtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="4.405"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="2.996"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="2.299"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.855"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.564"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.39"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1.137"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1.031"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.953"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0.823"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.775"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="MoveMenuBtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-105.556"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-61.866"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-40.266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-26.515"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-17.475"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-12.073"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-4.226"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-0.933"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.477"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="5.494"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="6.972"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-179.775"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-180.047"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-0.169"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.447"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1.574"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1.514"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="2.099"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.429"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="0.858"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.008"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.67"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-0.003"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
@@ -77,9 +158,30 @@
                 </TransformGroup>
             </DockPanel.RenderTransform>
             <StackPanel Height="445" VerticalAlignment="Top" Width="272">
-                <Button Name="MoveMenuBtn" Click="MenuButtonClick"  Content ="Hide" Height="46" x:FieldModifier="public"></Button>
-                <Button Name="StartPageBtn" Content ="Start Page" Click="StartPageBtn_OnClick" Height="46" x:FieldModifier="public"></Button>
-                <Button Name="PomodoroTimerBtn" Content ="Pomodoro timer" Click="PomodoroTimerBtn_OnClick " Height="46"></Button>
+                <Button Name="MoveMenuBtn" Click="MenuButtonClick" Height="46" x:FieldModifier="public" Margin="210,0,0,0" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+
+                    <Image x:Name="image" Source ="/Pomodoro;component/Resources/Icons/Arrow.png" Width="43.333" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button Name="StartPageBtn" Content ="Start Page" Click="StartPageBtn_OnClick" Height="46" x:FieldModifier="public"/>
+                <Button Name="PomodoroTimerBtn" Content ="Pomodoro timer" Click="PomodoroTimerBtn_OnClick " Height="46"/>
             </StackPanel>
 
         </DockPanel>
