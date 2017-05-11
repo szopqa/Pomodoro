@@ -5,10 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pomodoro.View.Pages.MainApplicationPages"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="435" d:DesignWidth="490"
       Title="PomodoroTimerPage">
 
+
     <Grid>
-        
+        <Image x:Name="StopwatchIcon" Source="../../../Resources/Icons/working_session_stopwatch.png" HorizontalAlignment="Left" Height="256" Margin="119.5,61,0,0" VerticalAlignment="Top" Width="256"/>
+        <Button x:Name="StartWorkingBtn" Content="Start working session" HorizontalAlignment="Left" Height="53" Margin="50,354,0,0" VerticalAlignment="Top" Width="137" Click="StartWorkingSession_Click"/>
+        <Button x:Name="StartRestBtn" Content="Take a break" Height="53" Margin="302,354,51,0" VerticalAlignment="Top"/>
+        <Label x:Name="MinutesLbl" Content ="00." Height="65" Margin="151,143,257,0" VerticalAlignment="Top" FontSize="50"/>
+        <Label x:Name="SecondsLbl"  Height="65" Margin="222,143,185,0" VerticalAlignment="Top" FontSize="50"/>
+        <Label x:Name="MilisecondsLbl" Content ="00." Height="48" Margin="302,165,141,0" VerticalAlignment="Top" FontSize="30"/>
+
     </Grid>
 </Page>
