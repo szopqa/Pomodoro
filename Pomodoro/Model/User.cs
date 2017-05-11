@@ -42,6 +42,12 @@ namespace Pomodoro.Model {
 			set { _isLoggedIn = value; }
 		}
 
+		private UserPreferences _preferences;
+		public UserPreferences Preferences {
+			get { return _preferences; }
+			set { _preferences = value; }
+		}
+
 	#endregion
 
 		//Constructors

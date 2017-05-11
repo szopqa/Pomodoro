@@ -62,7 +62,9 @@
     <Compile Include="Model\Database\NewUserCreator.cs" />
     <Compile Include="Model\Database\UserAuthorizer.cs" />
     <Compile Include="Model\Database\UsernameChecker.cs" />
+    <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserPreferences.cs" />
     <Compile Include="ViewModel\MainApplicationPagesViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPagesViewModel\CreateNewAccountPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPagesViewModel\LoginPageViewModel.cs" />
@@ -143,8 +145,17 @@
   <ItemGroup>
     <None Include="AppConfig\App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Resource Include="Resources\Icons\stopwatch %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\stopwatch %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\working_session_stopwatch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
