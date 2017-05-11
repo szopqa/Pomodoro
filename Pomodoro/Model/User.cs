@@ -58,6 +58,7 @@ namespace Pomodoro.Model {
 			this._password = password;
 			this._emailAddress = emailAddress;
 			this._isLoggedIn = false;
+			this._preferences = new UserPreferences();
 		}
 
 	}
