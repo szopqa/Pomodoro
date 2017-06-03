@@ -27,6 +27,9 @@ namespace Pomodoro.Model.Database{
 
 
 			using ( var connection = new SqlConnection(ConnectionString) ) {
+
+				try {
+
 				connection.Open();
 
 				//Making query
@@ -34,7 +37,7 @@ namespace Pomodoro.Model.Database{
 				command.Parameters.AddWithValue("0", username);
 				command.Parameters.AddWithValue("1", password);
 
-				try {
+				
 
 					using (var reader = command.ExecuteReader()) {
 

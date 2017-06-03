@@ -33,7 +33,7 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 		public void ShowUsername() {
 
 			var usernameLabel = UserInfoPage.FindName("UsernameLbl") as Label;
-			usernameLabel.Content = "Logged as: " + LoggedUser.Username;
+			usernameLabel.Content = LoggedUser.Username;
 
 		}
 

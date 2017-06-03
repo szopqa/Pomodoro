@@ -19,11 +19,14 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 		public PomodoroTimerPage() {
 			InitializeComponent();
 		}
-
-		private void StartWorkingSession_Click ( object sender, RoutedEventArgs e ) {
-			ViewModel.ActivateTimer();
+		private void PomodoroTimerOnload ( object sender, RoutedEventArgs e ) {
+			//TODO : Check if timer is running. If yes set current timer value not default
+			_viewModel.SetUserPreferences();
 		}
 
-		
+		private void StartWorkingSession_Click ( object sender, RoutedEventArgs e ) {
+			ViewModel.ActivateCountdown();
+		}
+
 	}
 }

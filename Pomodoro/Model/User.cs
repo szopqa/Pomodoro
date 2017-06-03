@@ -51,7 +51,10 @@ namespace Pomodoro.Model {
 	#endregion
 
 		//Constructors
-		public User() { }
+		public User() {
+			this._isLoggedIn = false;
+			this._preferences = new UserPreferences();
+		}
 
 		public User ( string username, string password, string emailAddress ) {
 			this._username = username;

@@ -33,11 +33,22 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 		}
 
 
-		public void ActivateTimer() {
+		public void ActivateCountdown() {
 			Timer timer = new Timer( Seconds_Tick );
 			timer.StartTimer();
 			
 		}
+
+		public void SetUserPreferences() {
+
+			Label secondsLabel = PomodoroTimerPage.FindName("SecondsLbl") as Label;
+			Label minutesLabel = PomodoroTimerPage.FindName("MinutesLbl") as Label;
+
+			secondsLabel.Content = "00";
+			minutesLabel.Content = _loggedUser.Preferences.WorkingSessionLength.ToString();
+
+		}
+
 
 		//TEST
 		private static int currentCount = 0;
@@ -50,7 +61,7 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 			Label secondsLabel = PomodoroTimerPage.FindName("SecondsLbl") as Label;
 
 			secondsLabel.Content = currentCount++;
-
+			
 		}
 
 	}

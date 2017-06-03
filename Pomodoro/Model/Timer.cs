@@ -17,8 +17,10 @@ namespace Pomodoro.Model {
 		/// <param name="functionToInvoke">Function invoked every interval</param>
 		public Timer( Action<object,EventArgs> functionToInvoke ) {
 
+			//Setting interval for one second
 			_timer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 1) };
-			_timer.Tick += new EventHandler(functionToInvoke);
+			
+			_timer.Tick += new EventHandler( functionToInvoke );
 
 		}
 
