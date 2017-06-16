@@ -9,7 +9,10 @@ using Pomodoro.ViewModel.MainApplicationPagesViewModel;
 namespace Pomodoro.Model {
 	public class Timer {
 
-		private DispatcherTimer _timer;	
+
+		private DispatcherTimer _timer;
+		private bool _isTimerRunning;
+
 
 		/// <summary>
 		/// Constructor

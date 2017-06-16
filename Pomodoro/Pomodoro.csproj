@@ -64,6 +64,7 @@
     <Compile Include="Model\Database\UsernameChecker.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserData.cs" />
     <Compile Include="Model\UserPreferences.cs" />
     <Compile Include="ViewModel\MainApplicationPagesViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPagesViewModel\CreateNewAccountPageViewModel.cs" />

@@ -48,6 +48,12 @@ namespace Pomodoro.Model {
 			set { _preferences = value; }
 		}
 
+		private UserData _userData;
+		public UserData UserData {
+			get { return _userData; }
+			set { _userData = value; }
+		}
+
 	#endregion
 
 		//Constructors

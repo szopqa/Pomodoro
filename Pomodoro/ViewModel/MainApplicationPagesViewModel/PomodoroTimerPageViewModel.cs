@@ -24,20 +24,56 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 			get { return _pomodoroTimerPage; }
 		}
 
-	#endregion
+		private int seconds;
+		public int Seconds {
+			get { return seconds; }
+			set { minutes = value; }
+		}
+		private int minutes;
+		public int Minutes {
+			get {  return minutes;	}
+			set {  minutes = value; }
+		}
+
+		private bool _isTimerRunning;
+		public bool IsTimerRunning {
+			get { return _isTimerRunning; }
+			set { _isTimerRunning = value; }
+		}
+
+		#endregion
 
 		//Constructor
 		public PomodoroTimerPageViewModel(User loggedUser, Page timerPage) {
 			LoggedUser = loggedUser;
 			PomodoroTimerPage = timerPage;
+			IsTimerRunning = false;
+			
+			//Setting session length based on user preferences
+			minutes = _loggedUser.Preferences.WorkingSessionLength;
+			seconds = 0;
 		}
 
+		/// <summary>
+		/// Setting up timer
+		/// </summary>
+		public void ActivateTimer() {
 
-		public void ActivateCountdown() {
 			Timer timer = new Timer( Seconds_Tick );
 			timer.StartTimer();
-			
+			IsTimerRunning = true;
+
 		}
+
+		/// <summary>
+		/// Method invoked every timer interval
+		/// </summary>
+		public void Seconds_Tick ( object sender, EventArgs e ) {
+
+			UpdateClock ( );
+
+		}
+
 
 		public void SetUserPreferences() {
 
@@ -45,24 +81,46 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 			Label minutesLabel = PomodoroTimerPage.FindName("MinutesLbl") as Label;
 
 			secondsLabel.Content = "00";
-			minutesLabel.Content = _loggedUser.Preferences.WorkingSessionLength.ToString();
+			minutesLabel.Content = Minutes.ToString();
+
+			//minutes = _loggedUser.Preferences.WorkingSessionLength;
 
 		}
+		
 
+		
 
-		//TEST
-		private static int currentCount = 0;
+		private void UpdateClock() {
 
-		/// <summary>
-		/// Method invoked every timer interval
-		/// </summary>
-		public void Seconds_Tick ( object sender, EventArgs e ) {
+			seconds--;
 
-			Label secondsLabel = PomodoroTimerPage.FindName("SecondsLbl") as Label;
+			Label secondsLabel = PomodoroTimerPage.FindName ( "SecondsLbl" ) as Label;
+			Label minutesLabel = PomodoroTimerPage.FindName ( "MinutesLbl" ) as Label;
 
-			secondsLabel.Content = currentCount++;
+			if (seconds < 0) {
+				seconds = 59;
+				minutes--;
+
+				secondsLabel.Content = seconds;
+
+				if (minutes < 10)
+					minutesLabel.Content = "0" + minutes;
+
+				minutesLabel.Content = minutes;
+			}
 			
+			else{
+				if (seconds < 10){
+					secondsLabel.Content = "0" + seconds;
+				}
+				else{
+					secondsLabel.Content = seconds;
+				}
+			}
 		}
+
+
+
 
 	}
 }

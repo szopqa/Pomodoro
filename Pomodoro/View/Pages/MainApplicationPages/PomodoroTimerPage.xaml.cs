@@ -21,11 +21,12 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 		}
 		private void PomodoroTimerOnload ( object sender, RoutedEventArgs e ) {
 			//TODO : Check if timer is running. If yes set current timer value not default
-			_viewModel.SetUserPreferences();
+			if(_viewModel.IsTimerRunning == false)
+				_viewModel.SetUserPreferences();
 		}
 
 		private void StartWorkingSession_Click ( object sender, RoutedEventArgs e ) {
-			ViewModel.ActivateCountdown();
+			ViewModel.ActivateTimer();
 		}
 
 	}
