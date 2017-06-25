@@ -66,6 +66,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserData.cs" />
     <Compile Include="Model\UserPreferences.cs" />
+    <Compile Include="ViewModel\MainApplicationPagesViewModel\Action.cs" />
     <Compile Include="ViewModel\MainApplicationPagesViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPagesViewModel\CreateNewAccountPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPagesViewModel\LoginPageViewModel.cs" />

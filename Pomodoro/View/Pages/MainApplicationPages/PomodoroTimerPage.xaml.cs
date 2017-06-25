@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Pomodoro.ViewModel.MainApplicationPagesViewModel;
+using Action = Pomodoro.ViewModel.MainApplicationPagesViewModel.Action;
 
 namespace Pomodoro.View.Pages.MainApplicationPages {
 	/// <summary>
@@ -20,14 +21,31 @@ namespace Pomodoro.View.Pages.MainApplicationPages {
 			InitializeComponent();
 		}
 		private void PomodoroTimerOnload ( object sender, RoutedEventArgs e ) {
-			//TODO : Check if timer is running. If yes set current timer value not default
+
 			if(_viewModel.IsTimerRunning == false)
 				_viewModel.SetUserPreferences();
+
+			StartRestBtn.Visibility = Visibility.Hidden;
+
 		}
 
 		private void StartWorkingSession_Click ( object sender, RoutedEventArgs e ) {
-			ViewModel.ActivateTimer();
+
+			ViewModel.ActivateTimer(Action.StartWorkingSession);
+
+			if (ViewModel.IsTimerRunning){
+				StartWorkingBtn.Visibility = Visibility.Hidden;
+				StartRestBtn.Visibility = Visibility.Visible;
+			}
+
 		}
 
+		private void BreakButtonClick ( object sender, RoutedEventArgs e )
+		{
+
+			
+
+
+		}
 	}
 }

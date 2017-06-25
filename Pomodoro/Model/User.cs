@@ -60,6 +60,7 @@ namespace Pomodoro.Model {
 		public User() {
 			this._isLoggedIn = false;
 			this._preferences = new UserPreferences();
+			this._userData = new UserData ( );
 		}
 
 		public User ( string username, string password, string emailAddress ) {
@@ -68,6 +69,7 @@ namespace Pomodoro.Model {
 			this._emailAddress = emailAddress;
 			this._isLoggedIn = false;
 			this._preferences = new UserPreferences();
+			this._userData = new UserData ( );
 		}
 
 	}
