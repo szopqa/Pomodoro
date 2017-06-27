@@ -38,7 +38,10 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 
 		private Timer _timer;
 
-		#endregion
+		//Action taking place currently
+		private Action _action;
+
+		#endregion	
 
 		//Constructor
 		public PomodoroTimerPageViewModel(User loggedUser, Page timerPage) {
@@ -47,85 +50,115 @@ namespace Pomodoro.ViewModel.MainApplicationPagesViewModel {
 			PomodoroTimerPage = timerPage;
 			IsTimerRunning = false;
 			this._timer = new Timer ( Seconds_Tick );
+
+		}
+
+
+		/// <summary>
+		/// Shows user working session duration preferences
+		/// </summary>
+		public void SetUserPreferences ( int minutes )
+		{
+
+			Label secondsLabel = PomodoroTimerPage.FindName ( "SecondsLbl" ) as Label;
+			Label minutesLabel = PomodoroTimerPage.FindName ( "MinutesLbl" ) as Label;
+
+			//Setting user preferences
+			secondsLabel.Content = "00";
+			if ( minutes < 10 )
+				minutesLabel.Content = "0" + minutes.ToString ( );
+			else
+				minutesLabel.Content = minutes.ToString ( );
 		}
 
 
 		/// <summary>
 		/// Setting up timer
 		/// </summary>
-		public void ActivateTimer( Action action ) {
+		public void ActivateTimer ( Action action) {
 
-			//checking if timer is currently running 
-			if(IsTimerRunning)
-				_timer.StopTimer();
+			if (IsTimerRunning)
+				StopTimer();
+
+			//Resetting seconds value
+			_seconds = 0;
+
+			//Timer duration depending user preferences for action chosen
+			switch (action) {
+
+				case Action.WorkingSession:
+					_minutes = LoggedUser.Preferences.WorkingSessionLength;
+					this._action = Action.WorkingSession;
+					break;
+
+				case Action.ShortBreak:
+					_minutes = LoggedUser.Preferences.ShortBreakLength;
+					this._action = Action.ShortBreak;
+					break;
+
+			}
 
 			_timer.StartTimer();
-			
-			if (action.Equals(Action.StartWorkingSession))
-				_minutes = LoggedUser.Preferences.WorkingSessionLength;
-			else
-				_minutes = LoggedUser.Preferences.ShortBreakLength;
 
 			IsTimerRunning = true;
+		}
 
+		/// <summary>
+		/// Stops currently running timer
+		/// </summary>
+		public void StopTimer() {
+			_timer.StopTimer();
 		}
 
 		/// <summary>
 		/// Method invoked every timer interval
 		/// </summary>
 		public void Seconds_Tick ( object sender, EventArgs e ) {
-
+			
 			UpdateClock ( );
 
-		}
+			//Saving user data ( duration of action done ) 
+			if (_action.Equals(Action.WorkingSession))
+				LoggedUser.UserData.WorkLengthInSeconds ++;
 
-
-		public void SetUserPreferences() {
-
-			Label secondsLabel = PomodoroTimerPage.FindName("SecondsLbl") as Label;
-			Label minutesLabel = PomodoroTimerPage.FindName("MinutesLbl") as Label;
-			
-			//Setting user preferences
-			secondsLabel.Content = "00";
-			minutesLabel.Content = LoggedUser.Preferences.WorkingSessionLength.ToString();
+			else if (_action.Equals(Action.ShortBreak))
+				LoggedUser.UserData.RestLengthInSeconds ++ ;
 
 		}
 		
 
 		
-
+		/// <summary>
+		/// Method invoked every clock interval, manages timer 
+		/// </summary>
 		private void UpdateClock() {
 
-			if (IsTimerRunning){
+			Label secondsLabel = PomodoroTimerPage.FindName ( "SecondsLbl" ) as Label;
+			Label minutesLabel = PomodoroTimerPage.FindName ( "MinutesLbl" ) as Label;
+			
 
-				Label secondsLabel = PomodoroTimerPage.FindName ( "SecondsLbl" ) as Label;
-				Label minutesLabel = PomodoroTimerPage.FindName ( "MinutesLbl" ) as Label;
-
-				_seconds--;
-
-				if ( _seconds < 0 ) {
+				if (_seconds < 0) {
 					_seconds = 59;
 					_minutes--;
-
-					secondsLabel.Content = _seconds;
-
-					if ( _minutes < 10 )
-						minutesLabel.Content = "0" + _minutes;
-
-					minutesLabel.Content = _minutes;
-				} else {
-					if ( _seconds < 10 ) {
-						secondsLabel.Content = "0" + _seconds;
-					} else {
-						secondsLabel.Content = _seconds;
-					}
 				}
-			}
 
+
+				//Showig values
+				if (_seconds < 10)
+					secondsLabel.Content = "0" + Seconds;
+				else
+					secondsLabel.Content = Seconds;
+
+				if (_minutes < 10)
+					minutesLabel.Content = "0" + Minutes;
+				else
+					minutesLabel.Content = Minutes;
+
+			
+			//Decresing time
+			_seconds--;
 
 		}
-
-
 
 
 	}

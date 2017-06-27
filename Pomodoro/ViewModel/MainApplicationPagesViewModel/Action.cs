@@ -1,8 +1,8 @@
 namespace Pomodoro.ViewModel.MainApplicationPagesViewModel
 {
 	public enum Action{
-		StartWorkingSession,
-		StartShortBreak,
+		WorkingSession,
+		ShortBreak,
 		SartLongBreak
 	}
 }

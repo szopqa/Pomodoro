@@ -11,11 +11,12 @@
 
     <Grid>
         <Image x:Name="StopwatchIcon" Source="../../../Resources/Icons/working_session_stopwatch.png" Height="256" Margin="117,63,117,0" VerticalAlignment="Top"/>
-        <Button x:Name="StartWorkingBtn" Content="Start working session" HorizontalAlignment="Left" Height="53" Margin="50,354,0,0" VerticalAlignment="Top" Width="137" Click="StartWorkingSession_Click"/>
-        <Button x:Name="StartRestBtn" Content="Take a break" Height="53" Margin="302,354,51,0" VerticalAlignment="Top" Click="BreakButtonClick"/>
+        <Button x:Name="StartWorkingBtn" Content="Start working session" HorizontalAlignment="Left" Height="53" Margin="172,354,0,0" VerticalAlignment="Top" Width="137" Click="StartWorkingSession_Click"/>
+        <Button x:Name="StartRestBtn" Content="Take a break" Height="53" Margin="172,354,181,0" VerticalAlignment="Top" Click="BreakButtonClick"/>
         <Label x:Name="MinutesLbl" Content ="00" Height="76" Margin="172,159,253,0" VerticalAlignment="Top" FontSize="50"/>
         <Label x:Name="SecondsLbl"  Content="00" Height="65" Margin="257,159,166,0" VerticalAlignment="Top" FontSize="50"/>
         <Label x:Name="Colon" Content =" : " Height="65" Margin="223,153,224,0" VerticalAlignment="Top" FontSize="50"/>
+        <Button x:Name="SkipBreakBtn" Content="Skip break" Height="53" Margin="172,354,181,0" VerticalAlignment="Top" Click="SkipBreakBtn_OnClickButtonClick"/>
 
     </Grid>
 </Page>

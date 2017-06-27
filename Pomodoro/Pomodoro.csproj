@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Database\IExecutable.cs" />
+    <Compile Include="Model\Database\UserDataManager.cs" />
     <Compile Include="Model\Database\NewUserCreator.cs" />
     <Compile Include="Model\Database\UserAuthorizer.cs" />
     <Compile Include="Model\Database\UsernameChecker.cs" />
